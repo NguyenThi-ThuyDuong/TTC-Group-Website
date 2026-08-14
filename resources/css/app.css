@@ -1,9 +1,117 @@
-@import 'tailwindcss';
+/* =====================================================================
+   TTC Group Website – app.css
+   Tailwind CSS v4 via @tailwindcss/vite  +  custom overrides
+   ===================================================================== */
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+/* 1. Tailwind v4 – cung cấp toàn bộ utility classes */
+@import "tailwindcss";
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* 2. Google Font – Montserrat đã load qua <head>, khai báo biến */
+:root {
+    --font-ttc: 'Montserrat', sans-serif;
+    --color-primary:  #ff6500;
+    --color-secondary: #00549a;
+    --color-dark:     #003b70;
+}
+
+/* 3. Base reset bổ sung */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-ttc);
+    background-color: #f9fafb;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 4. Layout wrapper */
+.layout-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* 5. TTC Brand colors – shorthand helpers */
+.text-ttc-primary   { color: var(--color-primary); }
+.bg-ttc-primary     { background-color: var(--color-primary); }
+.border-ttc-primary { border-color: var(--color-primary); }
+
+.text-ttc-secondary   { color: var(--color-secondary); }
+.bg-ttc-secondary     { background-color: var(--color-secondary); }
+.border-ttc-secondary { border-color: var(--color-secondary); }
+
+.text-ttc-dark   { color: var(--color-dark); }
+.bg-ttc-dark     { background-color: var(--color-dark); }
+.border-ttc-dark { border-color: var(--color-dark); }
+
+/* Legacy aliases kept for blade templates */
+.text-ttc-green { color: #008A45; }
+.bg-ttc-green   { background-color: #008A45; }
+.text-ttc-gold  { color: #EAA522; }
+.bg-ttc-gold    { background-color: #EAA522; }
+
+/* 6. Header shadow */
+.header-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* 7. Back-to-top button */
+.back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--color-dark);
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 50;
+}
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 8. Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar       { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* 9. Smooth image fade-in for hero sections */
+.hero-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 10. Section utilities */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+.section-divider {
+    width: 3.5rem;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
 }

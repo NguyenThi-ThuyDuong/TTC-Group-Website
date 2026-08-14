@@ -47,14 +47,14 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body class="layout-body">
 
     <!-- Header & Navbar -->
     @include('components.header')
-    @include('components.navbar')
+    <!-- Navbar component removed -->
 
     <!-- Main Content -->
-    <main class="flex-grow lg:pt-[120px] pt-[80px]">
+    <main class="flex-grow pt-30">
         @yield('content')
     </main>
 

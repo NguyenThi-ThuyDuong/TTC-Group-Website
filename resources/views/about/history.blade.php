@@ -252,9 +252,9 @@ $milestones = [
 <section class="bg-white">
 
     <div
-        class=" max-w-[1100px] mx-autopx-5 md:px-8py-16 md:py-24">
+        class="max-w-[1100px] mx-auto px-5 md:px-8 py-16 md:py-24">
         <div
-            class="text-center mb-16md:mb-24">
+            class="text-center mb-16 md:mb-24">
 
             <p
                 class=" text-xs  font-bold uppercase  tracking-[.25em]  text-[#ff6500] " >
@@ -382,7 +382,7 @@ $milestones = [
                                 {{ $item['text'] }}
                             </div>
 
-                            <div class="mt-5 h-[3px] w-10bg-[#ff6500] ">
+                            <div class="mt-5 h-[3px] w-10 bg-[#ff6500]">
                             </div>
 
                         </div>
