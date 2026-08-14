@@ -1,116 +1,178 @@
-# TTC Group Website
-
-> **Website TTC Group hiện đại, chuẩn premium sử dụng Laravel**
+# TTC Group Website Clone
 
 ## 🎯 Giới thiệu dự án
 
-**TTC Group Website** là một ứng dụng web full‑stack được xây dựng bằng **Laravel 13** và **Vite**. Dự án minh họa kiến trúc sạch, UI đáp ứng, và một bộ component Blade tái sử dụng giúp dễ bảo trì và mở rộng.
+**TTC Group Website Clone** là dự án xây dựng lại giao diện website của TTC Group với mục đích học tập và thực hành phát triển giao diện web.
 
-- **Backend**: Laravel 13 (PHP 8.3+)
-- **Frontend**: CSS thuần với hệ thống thiết kế tùy chỉnh (gradient, glass‑morphism, micro‑animation) và font Google *Inter*.
-- **Build**: Vite để bundling tài sản và hot‑module reloading.
-- **Cơ sở dữ liệu**: SQLite mặc định (có thể cấu hình qua `.env`).
+Dự án tập trung vào việc tái hiện bố cục, phong cách hiển thị, các thành phần giao diện và trải nghiệm người dùng của website tham khảo, đồng thời xây dựng các trang web theo hướng **responsive** và dễ mở rộng.
 
-## ✨ Tính năng
+Website tham khảo: [TTC Group](https://www.ttcgroup.vn/?utm_source=chatgpt.com)
 
-- **Giao diện đáp ứng** – thiết kế mobile‑first.
-- **UI sang trọng** – chế độ dark, gradient sinh động, hiệu ứng hover tinh tế.
-- **Thư viện component** – các component Blade cho navigation, hero, card, form, …
-- **Scaffold xác thực** – Laravel Breeze sẵn sàng (tùy chọn).
-- **Queue & log thời gian thực** – tích hợp Laravel queue.
-- **Pipeline tài sản** – Vite với HMR cho phát triển nhanh.
+> **Lưu ý:** Đây là dự án phục vụ mục đích học tập và thực hành lập trình. Dự án không phải là website chính thức của TTC Group.
 
-## 🛠️ Yêu cầu hệ thống
+---
 
-| Công cụ | Phiên bản |
-|---------|----------|
-| **PHP** | `^8.3` |
-| **Composer** | mới nhất |
-| **Node.js** | `>=20` |
-| **Git** | bất kỳ |
-| **SQLite** (mặc định) – tùy chọn MySQL/PostgreSQL |
+## 🛠️ Công nghệ sử dụng
+
+* **Laravel 13**
+* **PHP 8.3+**
+* **Blade Template**
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+* **Vite**
+* **Node.js**
+* **Composer**
+
+---
+
+## ✨ Chức năng chính
+
+* Xây dựng giao diện website theo phong cách TTC Group.
+* Thiết kế giao diện responsive trên Desktop, Tablet và Mobile.
+* Xây dựng các thành phần giao diện có thể tái sử dụng bằng Blade Components.
+* Hiển thị các trang thông tin của doanh nghiệp.
+* Xây dựng thanh điều hướng và footer.
+* Xây dựng banner, hero section, card và các khu vực nội dung.
+* Tạo hiệu ứng hover, animation và chuyển động cơ bản bằng CSS và JavaScript.
+
+---
+
+## 📁 Cấu trúc dự án
+
+```text
+TTC-Group-Website/
+│
+├── app/
+├── public/
+│   ├── images/
+│   └── assets/
+│
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+│       ├── about/
+│       ├─ business/
+│       ├─ careers/
+│       ├─ components/
+│       ├─ contact/
+│       ├─ home/
+│       ├─ layouts/
+│       ├─ media/
+│       ├─ social/
+│
+├── routes/
+│   └── web.php
+│
+├── package.json
+├── composer.json
+└── README.md
+```
+
+---
 
 ## 📦 Hướng dẫn cài đặt
 
 ### 1. Clone dự án
 
 ```bash
-# Clone repository về máy
 git clone https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website.git
+```
+
+Di chuyển vào thư mục dự án:
+
+```bash
 cd TTC-Group-Website
 ```
 
-### 2. Cài đặt phụ thuộc PHP
+### 2. Cài đặt thư viện PHP
 
 ```bash
 composer install
 ```
 
-### 3. Thiết lập môi trường
+### 3. Tạo file môi trường
 
 ```bash
-# Sao chép file môi trường mẫu và tạo khóa ứng dụng
-cp .env.example .env
+copy .env.example .env
+```
+
+Sau đó tạo application key:
+
+```bash
 php artisan key:generate
 ```
 
-### 4. Cài đặt phụ thuộc JavaScript và biên dịch tài sản
+### 4. Cài đặt thư viện JavaScript
 
 ```bash
 npm install
-npm run build   # hoặc npm run dev để bật hot‑reloading
 ```
 
-### 5. Chạy migration (SQLite mặc định)
+### 5. Chạy Vite
 
 ```bash
-php artisan migrate --force
+npm run dev
 ```
 
-## 🚀 Chạy server phát triển
+### 6. Chạy Laravel Server
+
+Mở một terminal khác và chạy:
 
 ```bash
-# Khởi động Laravel và Vite đồng thời
-npx concurrently -c "#93c5fd,#c4b5fd" \
-  "php artisan serve" \
-  "npm run dev"
+php artisan serve
 ```
 
-Mở trình duyệt tại <http://localhost:8000> để xem site.
+Sau đó truy cập:
 
-## 🧪 Kiểm thử
-
-```bash
-php artisan test
+```text
+http://localhost:8000
 ```
-
-## 📋 Cấu hình
-
-Các cấu hình chính nằm trong file `.env`. Bạn có thể thay đổi:
-
-- `APP_URL` – URL cơ sở của site.
-- `DB_CONNECTION` – `sqlite` (default), `mysql`, hoặc `pgsql`.
-- `SESSION_DRIVER` – `database` (default) để lưu phiên.
-- `MAIL_MAILER` – `log` cho môi trường phát triển.
-
-## 🏗️ Build & Deploy
-
-- **Phát triển** – `npm run dev` cung cấp hot‑module reloading qua Vite.
-- **Sản xuất** – `npm run build` tạo tài sản tối ưu trong `public/build`.
-
-## 🤝 Đóng góp
-
-1. Fork repository.
-2. Tạo nhánh tính năng (`git checkout -b feature/tinh-nang-moi`).
-3. Commit thay đổi với mô tả rõ ràng.
-4. Push lên fork và mở Pull Request.
-
-Vui lòng tuân thủ các chuẩn mã nguồn hiện có và đảm bảo các bài kiểm thử đều pass.
-
-## 📄 Giấy phép
-
-Dự án này được cấp phép theo **MIT License** – xem file `LICENSE` để biết chi tiết.
 
 ---
 
-*Chúc bạn lập trình vui vẻ!*
+## 🚀 Build giao diện
+
+Để build tài nguyên cho môi trường production:
+
+```bash
+npm run build
+```
+
+---
+
+## 🖼️ Giao diện
+
+Dự án được xây dựng dựa trên việc tham khảo bố cục và phong cách từ website TTC Group.
+
+Các khu vực giao diện bao gồm:
+
+* Trang chủ
+* Giới thiệu
+* Lĩnh vực hoạt động
+* Tin tức / Truyền thông
+* Trách nhiệm xã hội
+* Liên hệ
+* Header và Navigation
+* Footer
+
+---
+
+## 👩‍💻 Tác giả
+
+**Nguyễn Thị Thùy Dương**
+
+Sinh viên ngành Kỹ thuật Phần mềm.
+
+GitHub Repository:
+
+[TTC Group Website Repository](https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website)
+
+---
+
+## 📄 Lưu ý
+
+Dự án được thực hiện với mục đích **học tập, thực hành và nghiên cứu phát triển giao diện web**.
+
+Website được tham khảo từ TTC Group. Các thương hiệu, hình ảnh và nội dung gốc thuộc quyền sở hữu của các chủ sở hữu tương ứng.
