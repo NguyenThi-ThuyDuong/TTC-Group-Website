@@ -6,7 +6,7 @@
 
 Dự án tập trung vào việc tái hiện bố cục, phong cách hiển thị, các thành phần giao diện và trải nghiệm người dùng của website tham khảo, đồng thời xây dựng các trang web theo hướng **responsive** và dễ mở rộng.
 
-Website tham khảo: [TTC Group](https://www.ttcgroup.vn/?utm_source=chatgpt.com)
+Website tham khảo: [TTC Group](https://www.ttcgroup.vn)
 
 > **Lưu ý:** Đây là dự án phục vụ mục đích học tập và thực hành lập trình. Dự án không phải là website chính thức của TTC Group.
 
@@ -31,10 +31,10 @@ Website tham khảo: [TTC Group](https://www.ttcgroup.vn/?utm_source=chatgpt.com
 * Xây dựng giao diện website theo phong cách TTC Group.
 * Thiết kế giao diện responsive trên Desktop, Tablet và Mobile.
 * Xây dựng các thành phần giao diện có thể tái sử dụng bằng Blade Components.
-* Hiển thị các trang thông tin của doanh nghiệp.
-* Xây dựng thanh điều hướng và footer.
+* Hiển thị các trang thông tin của doanh nghiệp (Giới thiệu, Lĩnh vực hoạt động, Lịch sử phát triển, Bản tin TTC, Góc báo chí, Tuyển dụng, CSR, Liên hệ).
+* Xây dựng thanh điều hướng, header hai tầng và footer.
 * Xây dựng banner, hero section, card và các khu vực nội dung.
-* Tạo hiệu ứng hover, animation và chuyển động cơ bản bằng CSS và JavaScript.
+* Tạo hiệu ứng hover, animation và chuyển động mượt mà bằng CSS và JavaScript.
 
 ---
 
@@ -46,21 +46,29 @@ TTC-Group-Website/
 ├── app/
 ├── public/
 │   ├── images/
-│   └── assets/
+│   └── build/
 │
 ├── resources/
 │   ├── css/
+│   │   └── app.css
 │   ├── js/
 │   └── views/
 │       ├── about/
-│       ├─ business/
-│       ├─ careers/
-│       ├─ components/
-│       ├─ contact/
-│       ├─ home/
-│       ├─ layouts/
-│       ├─ media/
-│       ├─ social/
+│       │   ├── history.blade.php
+│       │   ├── index.blade.php
+│       │   └── members.blade.php
+│       ├── business/
+│       ├── careers/
+│       ├── components/
+│       │   ├── header.blade.php
+│       │   └── footer.blade.php
+│       ├── contact/
+│       ├── home/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       ├── media/
+│       │   └── index.blade.php
+│       └── social/
 │
 ├── routes/
 │   └── web.php
@@ -78,11 +86,6 @@ TTC-Group-Website/
 
 ```bash
 git clone https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website.git
-```
-
-Di chuyển vào thư mục dự án:
-
-```bash
 cd TTC-Group-Website
 ```
 
@@ -96,11 +99,6 @@ composer install
 
 ```bash
 copy .env.example .env
-```
-
-Sau đó tạo application key:
-
-```bash
 php artisan key:generate
 ```
 
@@ -124,11 +122,7 @@ Mở một terminal khác và chạy:
 php artisan serve
 ```
 
-Sau đó truy cập:
-
-```text
-http://localhost:8000
-```
+Sau đó truy cập: `http://127.0.0.1:8000`
 
 ---
 
@@ -149,30 +143,24 @@ Dự án được xây dựng dựa trên việc tham khảo bố cục và phon
 Các khu vực giao diện bao gồm:
 
 * Trang chủ
-* Giới thiệu
-* Lĩnh vực hoạt động
-* Tin tức / Truyền thông
+* Giới thiệu (Lịch sử hình thành & Đơn vị thành viên)
+* Lĩnh vực hoạt động (Nông nghiệp, Năng lượng, BĐS, BĐS Công nghiệp, Du lịch, Giáo dục)
+* Truyền thông (Tin tức TTC, Góc báo chí, Bản tin TTC, Thư viện ảnh, Video, Tài liệu khác)
 * Trách nhiệm xã hội
-* Liên hệ
-* Header và Navigation
-* Footer
+* Tuyển dụng & Liên hệ
 
 ---
 
 ## 👩‍💻 Tác giả
 
-**Nguyễn Thị Thùy Dương**
-
+**Nguyễn Thị Thùy Dương**  
 Sinh viên ngành Kỹ thuật Phần mềm.
 
-GitHub Repository:
-
-[TTC Group Website Repository](https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website)
+GitHub Repository: [TTC Group Website Repository](https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website)
 
 ---
 
 ## 📄 Lưu ý
 
-Dự án được thực hiện với mục đích **học tập, thực hành và nghiên cứu phát triển giao diện web**.
-
+Dự án được thực hiện với mục đích **học tập, thực hành và nghiên cứu phát triển giao diện web**.  
 Website được tham khảo từ TTC Group. Các thương hiệu, hình ảnh và nội dung gốc thuộc quyền sở hữu của các chủ sở hữu tương ứng.
