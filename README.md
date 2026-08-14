@@ -1,103 +1,116 @@
 # TTC Group Website
 
-> **A modern, premium Laravel‑based website for the TTC Group**
+> **Website TTC Group hiện đại, chuẩn premium sử dụng Laravel**
 
-## 🎯 Project Overview
+## 🎯 Giới thiệu dự án
 
-The **TTC Group Website** is a full‑stack web application built with **Laravel 13** and **Vite**. It showcases a clean architecture, responsive UI, and a set of reusable Blade components that make the site easy to maintain and extend.
+**TTC Group Website** là một ứng dụng web full‑stack được xây dựng bằng **Laravel 13** và **Vite**. Dự án minh họa kiến trúc sạch, UI đáp ứng, và một bộ component Blade tái sử dụng giúp dễ bảo trì và mở rộng.
 
 - **Backend**: Laravel 13 (PHP 8.3+)
-- **Frontend**: Vanilla CSS with a custom design system (gradient, glass‑morphism, micro‑animations) and Google Font *Inter*.
-- **Build**: Vite for asset bundling and hot‑module reloading.
-- **Database**: SQLite by default (configurable via `.env`).
+- **Frontend**: CSS thuần với hệ thống thiết kế tùy chỉnh (gradient, glass‑morphism, micro‑animation) và font Google *Inter*.
+- **Build**: Vite để bundling tài sản và hot‑module reloading.
+- **Cơ sở dữ liệu**: SQLite mặc định (có thể cấu hình qua `.env`).
 
-## ✨ Features
+## ✨ Tính năng
 
-- **Responsive layout** – mobile‑first design.
-- **Elegant UI** – dark mode, vibrant gradients, subtle hover animations.
-- **Component library** – reusable Blade components for navigation, hero sections, cards, forms, etc.
-- **Authentication scaffold** – ready‑to‑use Laravel Breeze (optional).
-- **Task queue & real‑time logs** – integrated with Laravel queues.
-- **Asset pipeline** – Vite with HMR for rapid development.
+- **Giao diện đáp ứng** – thiết kế mobile‑first.
+- **UI sang trọng** – chế độ dark, gradient sinh động, hiệu ứng hover tinh tế.
+- **Thư viện component** – các component Blade cho navigation, hero, card, form, …
+- **Scaffold xác thực** – Laravel Breeze sẵn sàng (tùy chọn).
+- **Queue & log thời gian thực** – tích hợp Laravel queue.
+- **Pipeline tài sản** – Vite với HMR cho phát triển nhanh.
 
-## 🛠️ Getting Started
+## 🛠️ Yêu cầu hệ thống
 
-### Prerequisites
-
-| Tool | Version |
-|------|---------|
+| Công cụ | Phiên bản |
+|---------|----------|
 | **PHP** | `^8.3` |
-| **Composer** | latest |
+| **Composer** | mới nhất |
 | **Node.js** | `>=20` |
-| **Git** | any |
-| **SQLite** (default) – optional MySQL/PostgreSQL |
+| **Git** | bất kỳ |
+| **SQLite** (mặc định) – tùy chọn MySQL/PostgreSQL |
 
-### Installation
+## 📦 Hướng dẫn cài đặt
+
+### 1. Clone dự án
 
 ```bash
-# Clone the repository
+# Clone repository về máy
 git clone https://github.com/NguyenThi-ThuyDuong/TTC-Group-Website.git
 cd TTC-Group-Website
+```
 
-# Install PHP dependencies
+### 2. Cài đặt phụ thuộc PHP
+
+```bash
 composer install
+```
 
-# Copy env file & generate app key
+### 3. Thiết lập môi trường
+
+```bash
+# Sao chép file môi trường mẫu và tạo khóa ứng dụng
 cp .env.example .env
 php artisan key:generate
+```
 
-# Install JS dependencies & build assets
+### 4. Cài đặt phụ thuộc JavaScript và biên dịch tài sản
+
+```bash
 npm install
-npm run build   # or npm run dev for hot reloading
+npm run build   # hoặc npm run dev để bật hot‑reloading
+```
 
-# Run migrations (SQLite by default)
+### 5. Chạy migration (SQLite mặc định)
+
+```bash
 php artisan migrate --force
 ```
 
-### Running the Development Server
+## 🚀 Chạy server phát triển
 
 ```bash
-# Start Laravel's built‑in server and Vite in parallel
+# Khởi động Laravel và Vite đồng thời
 npx concurrently -c "#93c5fd,#c4b5fd" \
   "php artisan serve" \
   "npm run dev"
 ```
 
-Visit <http://localhost:8000> in your browser.
+Mở trình duyệt tại <http://localhost:8000> để xem site.
 
-### Testing
+## 🧪 Kiểm thử
 
 ```bash
 php artisan test
 ```
 
-## 📦 Configuration
+## 📋 Cấu hình
 
-All configuration lives in the `.env` file. Key settings you might want to adjust:
+Các cấu hình chính nằm trong file `.env`. Bạn có thể thay đổi:
 
-- `APP_URL` – base URL of the site.
-- `DB_CONNECTION` – `sqlite` (default), `mysql`, or `pgsql`.
-- `SESSION_DRIVER` – `database` (default) for persistent sessions.
-- `MAIL_MAILER` – `log` for local development.
+- `APP_URL` – URL cơ sở của site.
+- `DB_CONNECTION` – `sqlite` (default), `mysql`, hoặc `pgsql`.
+- `SESSION_DRIVER` – `database` (default) để lưu phiên.
+- `MAIL_MAILER` – `log` cho môi trường phát triển.
 
-## 🏗️ Build & Assets
+## 🏗️ Build & Deploy
 
-- **Development** – `npm run dev` provides hot‑module reloading via Vite.
-- **Production** – `npm run build` creates optimized assets in `public/build`.
+- **Phát triển** – `npm run dev` cung cấp hot‑module reloading qua Vite.
+- **Sản xuất** – `npm run build` tạo tài sản tối ưu trong `public/build`.
 
-## 🤝 Contributing
+## 🤝 Đóng góp
 
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/awesome-feature`).
-3. Commit your changes with clear messages.
-4. Push to your fork and open a Pull Request.
+1. Fork repository.
+2. Tạo nhánh tính năng (`git checkout -b feature/tinh-nang-moi`).
+3. Commit thay đổi với mô tả rõ ràng.
+4. Push lên fork và mở Pull Request.
 
-Please ensure your code follows the existing coding standards and passes all tests.
+Vui lòng tuân thủ các chuẩn mã nguồn hiện có và đảm bảo các bài kiểm thử đều pass.
 
-## 📄 License
+## 📄 Giấy phép
 
-This project is licensed under the **MIT License** – see the `LICENSE` file for details.
+Dự án này được cấp phép theo **MIT License** – xem file `LICENSE` để biết chi tiết.
 
 ---
 
-*Happy coding!*
+*Chúc bạn lập trình vui vẻ!*
